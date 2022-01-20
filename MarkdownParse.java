@@ -40,7 +40,11 @@ public class MarkdownParse {
             //     currentIndex = closeParen + 1;
             // }
 
-            if(nextOpenBracket != 0 && markdown.charAt(nextOpenBracket-1) == '!'){
+            if(nextOpenBracket == -1 || nextCloseBracket == -1 || openParen == -1 || closeParen == -1){
+                return toReturn;
+            }
+
+            else if(nextOpenBracket != 0 && markdown.charAt(nextOpenBracket-1) == '!'){
                 currentIndex = closeParen + 1;
             }
             else{
