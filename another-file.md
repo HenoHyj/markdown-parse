@@ -4,5 +4,3 @@
 [another link!](https://hahahah.html/subpage)
 
 ![pic](report1 images/11.png)
-
-__[Here's some important message]__
