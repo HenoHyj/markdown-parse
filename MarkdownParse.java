@@ -19,30 +19,6 @@ public class MarkdownParse {
             int openParen = markdown.indexOf("(", nextCloseBracket);
             int closeParen = markdown.indexOf(")", openParen);
 
-            // if(nextOpenBracket == -1 && nextCloseBracket == -1 && openParen == -1 && closeParen == -1){
-            //     return toReturn;
-            // }
-
-            // if(nextOpenBracket == -1 || nextCloseBracket == -1 || openParen == -1 || closeParen == -1){
-            //     //throw new IndexOutOfBoundsException("Index couldn't find");
-            //     if(nextOpenBracket != -1){
-            //         currentIndex = markdown.indexOf("[", nextOpenBracket) - 1;
-            //     }
-            //     if(nextCloseBracket != -1){
-            //         currentIndex = markdown.indexOf("[", nextCloseBracket) - 1;
-            //     }
-            //     if(openParen != -1){
-            //         currentIndex = markdown.indexOf("[", openParen) - 1;
-            //     }
-            //     if(closeParen != -1){
-            //         currentIndex = markdown.indexOf("[", closeParen) - 1;
-            //     }
-            // }
-            // else{
-            //     toReturn.add(markdown.substring(openParen + 1, closeParen));
-            //     currentIndex = closeParen + 1;
-            // }
-
             if(nextOpenBracket == -1 || nextCloseBracket == -1 || openParen == -1 || closeParen == -1){
                 return toReturn;
             }
@@ -57,6 +33,7 @@ public class MarkdownParse {
             else{
                 currentIndex = closeParen + 1;
             }
+
         }
         return toReturn;
     }
