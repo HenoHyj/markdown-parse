@@ -8,3 +8,5 @@
 [](This is not a link)
 
 asdaeded
+
+[Google](www.google.com)
