@@ -26,7 +26,8 @@ public class MarkdownParse {
             else if(nextOpenBracket != 0 && markdown.charAt(nextOpenBracket-1) == '!'){
                 currentIndex = closeParen + 1;
             }
-            else if( markdown.substring(openParen + 1, closeParen).indexOf("https://") != -1 ){
+            else if( markdown.substring(openParen + 1, closeParen).indexOf("https://") != -1
+            || markdown.substring(openParen + 1, closeParen).indexOf("www.") != -1){
                 toReturn.add(markdown.substring(openParen + 1, closeParen));
                 currentIndex = closeParen + 1;
             }
