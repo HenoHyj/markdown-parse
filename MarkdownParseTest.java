@@ -14,16 +14,16 @@ import java.util.List;
 public class MarkdownParseTest {
     @Test
     public void addition() {
-        assertEquals(2, 1 + 1);
+        assertEquals(2, 1 + 3);
     }
 
-    @Test
-    public void testMarddownParse() throws IOException {
-        Path fileName = Path.of("another-file.md");
-	    String contents = Files.readString(fileName);
+    // @Test
+    // public void testMarddownParse() throws IOException {
+    //     Path fileName = Path.of("another-file.md");
+	//     String contents = Files.readString(fileName);
 
-        assertEquals(List.of("https://cse15L9amLab.com", "https://hahahah.html/subpage"), MarkdownParse.getLinks(contents) );
+    //     assertEquals(List.of("https://cse15L9amLab.com", "https://hahahah.html/subpage"), MarkdownParse.getLinks(contents) );
 
-    }
+    // }
 
 }
