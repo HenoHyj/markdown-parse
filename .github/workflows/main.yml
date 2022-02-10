@@ -36,5 +36,5 @@ jobs:
           bash mdparse another-file.md
       - name: Run a Autograder Test
         run: |
-          bash grade.sh
+          bash grade.sh https://github.com/HenoHyj/markdown-parse
 
