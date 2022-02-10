@@ -34,4 +34,8 @@ jobs:
         run: |
           bash mdparse test-file.md 
           bash mdparse another-file.md
+      - name: Run a Autograder Test
+        run: |
+          bash mdparse test-file.md 
+          bash mdparse another-file.md
 
