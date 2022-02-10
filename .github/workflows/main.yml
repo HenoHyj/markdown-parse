@@ -30,12 +30,11 @@ jobs:
       - name: Run a MarkdownParseTest
         run: |
           make test
-      - name: Run a MarkdownParseTest
+      - name: Run a MarkdownParseTest by using bash
         run: |
           bash mdparse test-file.md 
           bash mdparse another-file.md
       - name: Run a Autograder Test
         run: |
-          bash mdparse test-file.md 
-          bash mdparse another-file.md
+          bash grade.sh
 
