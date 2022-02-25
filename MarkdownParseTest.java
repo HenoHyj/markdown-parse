@@ -43,7 +43,7 @@ public class MarkdownParseTest {
         Path fileName = Path.of("snippet2.md");
 	    String contents = Files.readString(fileName);
 
-        assertEquals(List.of("a.com", "a.com(())", "www.google.com", "example.com"), 
+        assertEquals(List.of("a.com", "a.com(())", "example.com"), 
         MarkdownParse.getLinks(contents) );
 
         System.out.println("If you see this message, this means testSnippet2 passed.");
