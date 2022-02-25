@@ -21,18 +21,22 @@ public class MarkdownParse {
 
             if(nextOpenBracket == -1 || nextCloseBracket == -1 || openParen == -1 || closeParen == -1){
                 break;
-                //return toReturn;
+            }
+
+            else if(markdown.substring(nextOpenBracket + 1, nextCloseBracket).indexOf("\n") != -1){
+                currentIndex = closeParen + 1;
             }
 
             else if(nextOpenBracket != 0 && markdown.charAt(nextOpenBracket-1) == '!'){
                 currentIndex = closeParen + 1;
             }
-            else if( markdown.substring(openParen + 1, closeParen).indexOf("https://") != -1
-            || markdown.substring(openParen + 1, closeParen).indexOf("www.") != -1){
-                toReturn.add(markdown.substring(openParen + 1, closeParen));
+
+            else if(nextOpenBracket != 0 && markdown.charAt(nextOpenBracket-1) == '`'){
                 currentIndex = closeParen + 1;
             }
+
             else{
+                toReturn.add(markdown.substring(openParen + 1, closeParen));
                 currentIndex = closeParen + 1;
             }
 

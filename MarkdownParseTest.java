@@ -22,9 +22,42 @@ public class MarkdownParseTest {
         Path fileName = Path.of("another-file.md");
 	    String contents = Files.readString(fileName);
 
-        assertEquals(List.of("https://cse15L9amLab.com", "https://hahahah.html/subpage", "www.google.com"), 
+        assertEquals(List.of("https://cse15L9amLab.com", "https://hahahah.html/subpage", "This is not a link", "www.google.com"), 
         MarkdownParse.getLinks(contents) );
 
+    }
+
+    @Test
+    public void testSnippet1() throws IOException {
+        Path fileName = Path.of("snippet1.md");
+	    String contents = Files.readString(fileName);
+
+        assertEquals(List.of("`google.com", "google.com", "ucsd.edu"), 
+        MarkdownParse.getLinks(contents) );
+
+        System.out.println("If you see this message, this means testSnippet1 passed.");
+    }
+
+    @Test
+    public void testSnippet2() throws IOException {
+        Path fileName = Path.of("snippet2.md");
+	    String contents = Files.readString(fileName);
+
+        assertEquals(List.of("a.com", "a.com(())", "www.google.com", "example.com"), 
+        MarkdownParse.getLinks(contents) );
+
+        System.out.println("If you see this message, this means testSnippet2 passed.");
+    }
+
+    @Test
+    public void testSnippet3() throws IOException {
+        Path fileName = Path.of("snippet3.md");
+	    String contents = Files.readString(fileName);
+
+        assertEquals(List.of("https://ucsd-cse15l-w22.github.io/"), 
+        MarkdownParse.getLinks(contents) );
+
+        System.out.println("If you see this message, this means testSnippet3 passed.");
     }
 
 }
