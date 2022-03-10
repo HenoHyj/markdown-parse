@@ -4,15 +4,16 @@ import org.commonmark.renderer.html.HtmlRenderer;
 
 class TryCommonMark {
     public static void main(String[] args) {
-        Node node = parser.parse("Example\n=======\n\nSome more text");
-        WordCountVisitor visitor = new WordCountVisitor();
-        node.accept(visitor);
-        visitor.wordCount;  // 4
 
         Parser parser = Parser.builder().build();
         Node document = parser.parse("This is *Sparta*");
         HtmlRenderer renderer = HtmlRenderer.builder().build();
         renderer.render(document);  // "<p>This is <em>Sparta</em></p>\n"
+
+        Node node = parser.parse("Example\n=======\n\nSome more text");
+        WordCountVisitor visitor = new WordCountVisitor();
+        node.accept(visitor);
+        visitor.wordCount;  // 4
     }
 }
 
